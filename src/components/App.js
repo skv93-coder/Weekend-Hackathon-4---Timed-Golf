@@ -7,9 +7,9 @@ class Timer extends React.Component {
     this.state = { time: 0, x: 0, y: 0, start: false, date: 0 };
     this.startTimer = this.startTimer.bind(this);
     this.myTimer = this.myTimer.bind(this);
-    this.clickHandle = this.clickHandle.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-  clickHandle(ev) {
+  handleClick(ev) {
     // //console.log(ev);
     if (ev.keyCode === 37 && this.state.start === true) {
       let z = this.state.x - 5;
@@ -48,7 +48,7 @@ class Timer extends React.Component {
     setInterval(this.myTimer, 1000);
   }
   componentDidMount() {
-    document.addEventListener("keydown", (ev) => this.clickHandle(ev));
+    document.addEventListener("keydown", (ev) => this.handleClick(ev));
   }
 
   componentWillUnmount() {
