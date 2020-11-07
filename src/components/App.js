@@ -11,6 +11,9 @@ class Timer extends React.Component {
   }
   handleClick(ev) {
     // //console.log(ev);
+    if (this.state.x === 250 && this.state.y === 250) {
+      return;
+    }
     if (ev.keyCode === 37 && this.state.start === true) {
       let z = this.state.x - 5;
       let w = this.state.y;
